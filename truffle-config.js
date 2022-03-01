@@ -1,4 +1,4 @@
-import { myPhrase, deployerAddress, deployerAddress } from "./secret";
+import { myPhrase, deployerAddress} from "./secret";
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const mnemonic = myPhrase; 
 const deployerAddress = deployerAddress;
