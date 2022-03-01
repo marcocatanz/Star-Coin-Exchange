@@ -1,24 +1,60 @@
-import logo from './logo.svg';
+import * as s from './styles/style.js';
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { NavBar } from './components/navbar.js';
+import { useDispatch, useSelector} from 'react-redux';
+import { useEffect } from 'react';
+import { Exchange } from './pages/exchange.js';
+import { AboutPage } from './pages/about.js';
+import { Popup } from './components/popup.js';
+import { connectSuccess, connectFailed } from './redux/action.js';
+import { AccountPage } from './components/wallet.js';
+import Web3 from 'web3';
+
 
 function App() {
+  const web3 = new Web3(window.ethereum);
+  const accounts = web3.eth.getAccounts();
+  const dispatch = useDispatch();
+  const page = useSelector((state) => state.page);
+  const popup = useSelector((state) => state.popup);
+  const connected = useSelector((state) => state.connected);
+  const dropdown = useSelector((state) => state.dropdown);
+
+
+       useEffect(() => {
+         if(window.ethereum){
+           window.ethereum.on("accountsChanged", (accounts) => {
+                   window.location.reload();
+            });
+           
+            window.ethereum.on('chainChanged', () => {
+            window.location.reload();
+            });
+         }
+        });
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <NavBar></NavBar>
+    {
+    popup == "open" 
+    ?
+     <Popup></Popup>
+    :
+     null
+    }
+
+    
+
+    <Routes>
+        <Route path="/" element={<AboutPage />} />
+        <Route path="exchange" element={<Exchange />} />
+    </Routes>
+     
+    </>
+
   );
 }
 
