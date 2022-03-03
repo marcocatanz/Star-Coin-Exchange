@@ -13,6 +13,18 @@ export const Container = styled.div`
   height: 100vh;
   background-color: ${props => props.bgc}
 `;
+export const Row = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+`;
+
+//Coin Models
+export const ModelContainer = styled.div`
+  height: 500px;
+  width: 500px;
+`;
 
 //navbar
 export const Nav  = styled.nav`
