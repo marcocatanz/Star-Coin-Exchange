@@ -29,14 +29,11 @@ export const AccountPage = () => {
     const getAccount = async (e) => {
         const accounts = await web3.eth.getAccounts();
         const account = await accounts[0];
-        const starcoin = new web3.eth.Contract(require('../contracts/StarCoin.json').abi, "0x5041baf6999C5D6c853c3e32A70cA6A1c0BB8B29");
+        const starcoin = new web3.eth.Contract(require('../contracts/StarCoin.json').abi, "0xB70caE94d4AE64F8d03DdaF434c3415000cd38f3");
         const starBalance = await starcoin.methods.balanceOf(account).call();
         const ethBalance = await parseFloat(web3.utils.fromWei((await web3.eth.getBalance(account)), 'ether')).toFixed(2);
 
-        // const liquidity = await starcoin.methods.balanceOf("0x68562E9eCF7D12C758236346e87142291a597506").call();
-        // console.log("Your Account: "+ account);
-        // console.log("liquidity: " + liquidity);
-        // console.log('balance: ' + balance);
+     
         setAccount(account.toString());
         setStarBalance(web3.utils.fromWei(starBalance));
         setEthBalance(ethBalance);

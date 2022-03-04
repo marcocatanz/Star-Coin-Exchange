@@ -6,8 +6,8 @@ import { requestConnect, connectFailed, updateValues, buySuccess } from '../redu
 import Web3 from 'web3';
 const web3 = new Web3(window.ethereum);
 
-const Exchange = new web3.eth.Contract(require('../contracts/Exchange.json').abi, '0x267aBd60601240eF53f963fFf29d110F743e27de');
-const StarCoin = new web3.eth.Contract(require('../contracts/StarCoin.json').abi, '0x5041baf6999C5D6c853c3e32A70cA6A1c0BB8B29');
+const Exchange = new web3.eth.Contract(require('../contracts/Exchange.json').abi, '0x658fa6148712526b9944084CFBDC2039E01e2C2C');
+const StarCoin = new web3.eth.Contract(require('../contracts/StarCoin.json').abi, '0xB70caE94d4AE64F8d03DdaF434c3415000cd38f3');
 
 export const Popup = () => {
     const dispatch = useDispatch();
@@ -22,7 +22,6 @@ export const Popup = () => {
  
 
 const connectWallet = async (e) => {
-        e.preventDefault();
         dispatch(requestConnect());
         if (window.ethereum){
             const networkID = await window.ethereum.request({ method: 'net_version'});
@@ -77,7 +76,7 @@ const buy = async (e) => {
             try{
                 const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
                 const account = accounts[0];
-                await StarCoin.methods.approve("0x267aBd60601240eF53f963fFf29d110F743e27de", web3.utils.toWei(starValue, 'ether')).send({
+                await StarCoin.methods.approve("0x658fa6148712526b9944084CFBDC2039E01e2C2C", web3.utils.toWei(starValue, 'ether')).send({
                     from: account
                 });
                 await Exchange.methods.sell(web3.utils.toWei(starValue, 'ether')).send({

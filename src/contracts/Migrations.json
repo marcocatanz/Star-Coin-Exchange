@@ -671,7 +671,7 @@
   "sourceMap": "66:352:5:-:0;;;90:33;;;-1:-1:-1;;;;;;90:33:5;113:10;90:33;;;66:352;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "66:352:5:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;127:36;;;;;;;;;160:25:7;;;148:2;133:18;127:36:5;;;;;;;;90:33;;;;;-1:-1:-1;;;;;90:33:5;;;;;;-1:-1:-1;;;;;360:32:7;;;342:51;;330:2;315:18;90:33:5;196:203:7;313:103:5;;;;;;:::i;:::-;;:::i;:::-;;;225:5;;-1:-1:-1;;;;;225:5:5;211:10;:19;196:101;;;;-1:-1:-1;;;196:101:5;;791:2:7;196:101:5;;;773:21:7;830:2;810:18;;;803:30;869:34;849:18;;;842:62;-1:-1:-1;;;920:18:7;;;913:49;979:19;;196:101:5;;;;;;;;375:24:::1;:36:::0;313:103::o;404:180:7:-;463:6;516:2;504:9;495:7;491:23;487:32;484:52;;;532:1;529;522:12;484:52;-1:-1:-1;555:23:7;;404:180;-1:-1:-1;404:180:7:o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract Migrations {\n  address public owner = msg.sender;\n  uint public last_completed_migration;\n\n  modifier restricted() {\n    require(\n      msg.sender == owner,\n      \"This function is restricted to the contract's owner\"\n    );\n    _;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n}\n",
-  "sourcePath": "C:\\Users\\Marco\\Documents\\blockchain\\Testing\\starcoin\\starcoin6\\contracts\\Migrations.sol",
+  "sourcePath": "C:\\Users\\Marco\\Documents\\blockchain\\starcoin\\contracts\\Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -1471,11 +1471,17 @@
     "version": "0.8.10+commit.fc410830.Emscripten.clang"
   },
   "networks": {
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0xF56f083C90d11d4269Ded53c4Cb2294BeD43141a",
+      "transactionHash": "0xc9dd910b7de9635d1909b581bc55617a27c72ea7db59fbe485ff986187dd81a7"
+    },
     "4": {
       "events": {},
       "links": {},
-      "address": "0xcE74BEa1035cb670F27137236c8E80B3662E8571",
-      "transactionHash": "0x88b2c4b6e8cdf28ee3a64d3a701a744123f9912770087349940d89ac6ec96bf0"
+      "address": "0xC6be839b4B8e6B76E5A6B2B9189D96383a878226",
+      "transactionHash": "0x12ae900fc3d0758e14dd57af5ec9ea8c516b97248146e1f0fa0ed1aa8fff214b"
     },
     "1645702906300": {
       "events": {},
@@ -1495,21 +1501,21 @@
       "address": "0xC0ef6ea2a9A7216D3110d7aa877f9B00D67fAF12",
       "transactionHash": "0x04c6bccbcd726333ee8f6972aa9c7ac129ef73301bb9556c4a2902b0ce85292d"
     },
-    "4": {
-      "events": {},
-      "links": {},
-      "address": "0x5Ce1300CD686398031E9b836738DbE458A337eA7",
-      "transactionHash": "0xbb209a40142c5f6e6354e62c254463a586ecef43df0ea9a35c6491a0e1dbc8ae"
-    },
     "1646000273399": {
       "events": {},
       "links": {},
       "address": "0x5E9C625700f28823561FCA7FD80b8b2306F191fC",
       "transactionHash": "0x76ee22b760ab397fc538c4a69284f0d941c02655f345b1b17b8df1a53cc064bd"
+    },
+    "1646379508003": {
+      "events": {},
+      "links": {},
+      "address": "0x97fAb247608E9A310F1FDCa8528088C4C0453cD2",
+      "transactionHash": "0xfa01aa2d1b251b8a679dfd100531dddfc15f1af578462859a6ee17f292a6f9e0"
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2022-02-27T23:06:13.945Z",
+  "updatedAt": "2022-03-04T11:35:03.883Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

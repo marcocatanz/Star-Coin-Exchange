@@ -9,17 +9,27 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: 30px;
-  padding-right: 30px;
   width: 100vw;
   height: 100vh;
-  background-color: ${props => props.bgc}
+  background-color: ${props => props.bgc};
+`;
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1500px;
+  height: 500px;
 `;
 export const Row = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
+`;
+export const Spacer = styled.div`
+  height: 100px;
+  width: 100%;
 `;
 
 //Coin Models
@@ -350,6 +360,7 @@ export const PopupBackground = styled.div`
    width: 100vw;
    background-color: rgba(0, 0, 0, 0.5);
    position: fixed;
+   z-index: 11;
 `;
 
 export const Popup = styled.div`
