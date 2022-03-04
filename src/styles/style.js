@@ -9,6 +9,8 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
   width: 100vw;
   height: 100vh;
   background-color: ${props => props.bgc}
@@ -496,12 +498,22 @@ export const BalanceContainer= styled.div`
 `;
 
 //text
+export const TextTitleLarge = styled.p`
+  font-family: 'Space Mono', monospace;
+  font-size: 100px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: ${props => props.ta};
+  color: ${props => props.c};
+`;
+
 export const TextTitle = styled.p`
   font-family: 'Space Mono', monospace;
   font-size: 35px;
   font-weight: bold;
   margin-bottom: 0px;
   text-align: ${props => props.ta};
+  color: ${props => props.c};
 `;
 export const Text = styled.p`
   font-family: 'Space Mono', monospace;
@@ -526,4 +538,18 @@ export const TextBalance = styled.p`
   @media screen and (max-width: 500px){
      font-size: 25px;
    }
+`;
+export const TextLink = styled(Link)`
+  text-decoration: none;
+  color: #75c9b7;
+  &:hover{
+    color: white;
+  }
+`;
+export const TextA = styled.a`
+  text-decoration: none;
+  color: #75c9b7;
+  &:hover{
+    color: white;
+  }
 `;
